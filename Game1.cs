@@ -13,7 +13,7 @@ namespace Topic_1_Assignment___Content__Scaling__Text__and_More
         Texture2D backgroundTexture;
         Rectangle backgroundRect;
 
-        Texture2D sunflowerTecture;
+        Texture2D sunflowerTexture;
         Rectangle sunflowerRect;
 
         Texture2D peashooterTexture;
@@ -40,9 +40,9 @@ namespace Topic_1_Assignment___Content__Scaling__Text__and_More
             Window.Title = "Soon";
             backgroundRect = new Rectangle(0, 0, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
             sunflowerRect = new Rectangle(175, 240, 60, 70);
-            peashooterRect = new Rectangle(225, 240, 60, 70);
-            wallnutRect = new Rectangle(325, 240, 60, 70);
-            zombieRect = new Rectangle(425, 240, 60, 70);
+            peashooterRect = new Rectangle(245, 240, 60, 70);
+            wallnutRect = new Rectangle(390, 240, 60, 70);
+            zombieRect = new Rectangle(455, 230, 77, 90);
 
 
 
@@ -53,8 +53,10 @@ namespace Topic_1_Assignment___Content__Scaling__Text__and_More
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             backgroundTexture = Content.Load<Texture2D>("Images/Frontyard");
-
-
+            sunflowerTexture = Content.Load<Texture2D>("Images/SunflowerSprite");
+            peashooterTexture = Content.Load<Texture2D>("Images/PeashooterSprite");
+            wallnutTexture = Content.Load<Texture2D>("Images/WallnutSprite");
+            zombieTexture = Content.Load<Texture2D>("Images/BrownCoatSprite");
 
         }
 
@@ -63,7 +65,7 @@ namespace Topic_1_Assignment___Content__Scaling__Text__and_More
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+
 
             base.Update(gameTime);
         }
@@ -73,7 +75,10 @@ namespace Topic_1_Assignment___Content__Scaling__Text__and_More
             GraphicsDevice.Clear(Color.CornflowerBlue);
             _spriteBatch.Begin();
             _spriteBatch.Draw(backgroundTexture, backgroundRect, Color.White);
-            _spriteBatch.Draw(backgroundTexture, sunflowerRect, Color.Black);
+            _spriteBatch.Draw(sunflowerTexture, sunflowerRect, Color.White);
+            _spriteBatch.Draw(peashooterTexture, peashooterRect, Color.White);
+            _spriteBatch.Draw(wallnutTexture, wallnutRect, Color.White);
+            _spriteBatch.Draw(zombieTexture, zombieRect, Color.White);
             _spriteBatch.End();
             base.Draw(gameTime);
         }
