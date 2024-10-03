@@ -13,6 +13,13 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Fonts/SpeechFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/SpeechFont.spritefont
+
 #begin Images/BrownCoatSprite.png
 /importer:TextureImporter
 /processor:TextureProcessor
